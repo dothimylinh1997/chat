@@ -4,7 +4,7 @@ const client = require('socket.io').listen(process.env.PORT || 4000).sockets;
 
 // connect to mongo
 
-mongo.connect('mongodb://127.0.0.1/chat',{ useNewUrlParser: true },function(err, db){
+mongo.connect('mongodb://chat:chat1997@ds123224.mlab.com:23224/chatdb',{ useNewUrlParser: true },function(err, db){
     if(err){
         throw err;
     }
