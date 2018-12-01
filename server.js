@@ -1,6 +1,5 @@
 const mongo = require('mongodb').MongoClient;
-const client = require('socket.io').listen(process.env.PORT || 4000).sockets;
-
+const client = require('socket.io').listen(process.env.PORT).sockets;
 
 // connect to mongo
 
@@ -11,7 +10,7 @@ mongo.connect('mongodb://chat:chat1997@ds123224.mlab.com:23224/chatdb',{ useNewU
     console.log('Mongodb connected...');
     var database = db.db('chatdb');
     // Connect to Socket.io
-    client.on('connections', function(socket){
+    client.on('connection', function(socket){
 
         var chat = database.collection('chatcollection'); // collection message 
 
