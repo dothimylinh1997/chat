@@ -1,6 +1,6 @@
 var express = require('express');
 const mongo = require('mongodb').MongoClient;
-const client = require('socket.io').listen(process.env.PORT).sockets;
+const client = require('socket.io').listen(process.env.PORT || 3000).sockets;
 client.use(express.static('public'))
 // connect to mongo
 
