@@ -9,11 +9,11 @@ mongo.connect('mongodb://chat:chat1997@ds123224.mlab.com:23224/chatdb',{ useNewU
         throw err;
     }
     console.log('Mongodb connected...');
-    var database = db.db('chat');
+    var database = db.db('chatdb');
     // Connect to Socket.io
-    client.on('connection', function(socket){
+    client.on('connections', function(socket){
 
-        var chat = database.collection('messages'); // collection message 
+        var chat = database.collection('chatcollection'); // collection message 
 
         // Create function to send status
         sendStatus = function(s){
