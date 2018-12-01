@@ -1,6 +1,7 @@
+var express = require('express');
 const mongo = require('mongodb').MongoClient;
 const client = require('socket.io').listen(process.env.PORT).sockets;
-
+client.use(express.static('public'))
 // connect to mongo
 
 mongo.connect('mongodb://chat:chat1997@ds123224.mlab.com:23224/chatdb',{ useNewUrlParser: true },function(err, db){
